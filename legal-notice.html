@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TresorML - Legal Notice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html#top" id="logo">TresorML</a>
+        <nav>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="legal-notice" class="legal-notice-section">
+        <div class="container">
+          <h1>Legal Notice</h1>
+
+          <h2>Information according to § 5 TMG</h2>
+          <p>
+            Nicolas Stellwag<br />
+            Im Grund 112<br />
+            91161 Hilpoltstein<br />
+            Germany
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            Telephone: +491703511727<br />
+            Email: stellwagnicolas@gmail.com
+          </p>
+
+          <h2>Responsible for the content according to § 55 Abs. 2 RStV</h2>
+          <p>
+            Nicolas Stellwag<br />
+            Im Grund 112<br />
+            91161 Hilpoltstein<br />
+            Germany
+          </p>
+
+          <h2>Dispute Resolution</h2>
+          <p>
+            The European Commission provides a platform for online dispute
+            resolution (OS):
+            <a href="https://ec.europa.eu/consumers/odr" target="_blank"
+              >https://ec.europa.eu/consumers/odr</a
+            >.<br />
+            Our email address can be found above in the legal notice.
+          </p>
+          <p>
+            We are not willing or obliged to participate in dispute resolution
+            proceedings before a consumer arbitration board.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 Janik Jehkul, Alexander Wiener, Nicolas Stellwag. All
+          rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> |
+          <a href="legal-notice.html">Legal Notice</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Basic smooth scrolling for anchor links within the index page if needed
+      document
+        .querySelectorAll('header nav a[href^="index.html#"]')
+        .forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href").split("#")[1];
+            if (targetId) {
+              sessionStorage.setItem("scrollToId", targetId);
+            }
+          });
+        });
+      // If there's a scroll target in session storage, navigate and scroll
+      if (sessionStorage.getItem("scrollToId")) {
+        const scrollToId = sessionStorage.getItem("scrollToId");
+        sessionStorage.removeItem("scrollToId"); // Clear it after use
+        // Redirect to index.html and pass the scroll target
+        window.location.href = "index.html#" + scrollToId;
+      }
+    </script>
+  </body>
+</html>

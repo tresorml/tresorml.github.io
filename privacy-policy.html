@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TresorML - Privacy Policy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html#top" id="logo">TresorML</a>
+        <nav>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="privacy-policy" class="privacy-section">
+        <div class="container">
+          <h1>Privacy Policy</h1>
+
+          <h2>1. Data Controller</h2>
+          <p>
+            Nicolas Stellwag<br />
+            Im Grund 112<br />
+            91161 Hilpoltstein<br />
+            Germany<br />
+            Email: stellwagnicolas@gmail.com
+          </p>
+
+          <h2>2. Collection and Processing of Personal Data</h2>
+          <p>
+            When you subscribe to our newsletter, we collect and process the
+            following personal data:
+          </p>
+          <ul>
+            <li>Name</li>
+            <li>Email address</li>
+          </ul>
+
+          <h2>3. Purpose of Data Processing</h2>
+          <p>We process your personal data for the following purposes:</p>
+          <ul>
+            <li>
+              To send you our newsletter with information about our products and
+              services
+            </li>
+            <li>To inform you about the launch of our platform</li>
+          </ul>
+
+          <h2>4. Legal Basis for Processing</h2>
+          <p>
+            The legal basis for processing your data is your consent according
+            to Art. 6 (1) (a) GDPR.
+          </p>
+
+          <h2>5. Duration of Storage</h2>
+          <p>
+            We store your personal data until you withdraw your consent or
+            unsubscribe from our newsletter.
+          </p>
+
+          <h2>6. Your Rights</h2>
+          <p>You have the following rights regarding your personal data:</p>
+          <ul>
+            <li>Right to access (Art. 15 GDPR)</li>
+            <li>Right to rectification (Art. 16 GDPR)</li>
+            <li>Right to erasure (Art. 17 GDPR)</li>
+            <li>Right to restriction of processing (Art. 18 GDPR)</li>
+            <li>Right to data portability (Art. 20 GDPR)</li>
+            <li>Right to object (Art. 21 GDPR)</li>
+            <li>Right to withdraw consent (Art. 7 (3) GDPR)</li>
+          </ul>
+
+          <h2>7. Right to Lodge a Complaint</h2>
+          <p>
+            You have the right to lodge a complaint with a supervisory authority
+            if you believe that the processing of your personal data infringes
+            the GDPR.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2025 Janik Jehkul, Alexander Wiener, Nicolas Stellwag. All
+          rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="legal-notice.html">Legal Notice</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Basic smooth scrolling for anchor links within the index page if needed
+      document
+        .querySelectorAll('header nav a[href^="index.html#"]')
+        .forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href").split("#")[1];
+            if (targetId) {
+              sessionStorage.setItem("scrollToId", targetId);
+            }
+          });
+        });
+      // If there's a scroll target in session storage, navigate and scroll
+      if (sessionStorage.getItem("scrollToId")) {
+        const scrollToId = sessionStorage.getItem("scrollToId");
+        sessionStorage.removeItem("scrollToId"); // Clear it after use
+        // Redirect to index.html and pass the scroll target
+        window.location.href = "index.html#" + scrollToId;
+      }
+    </script>
+  </body>
+</html>
