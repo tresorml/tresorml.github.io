@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TresorML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#top" id="logo">TresorML</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="top" class="hero">
+            <div class="container">
+                <h1>Simplifying ML for Non-destructive Testing</h1>
+                <p>TresorML is planning to build VoxelVault, a platform for storing, normalizing, annotating, and augmenting your CT and PAUT data for ML applications.</p>
+                <h2>Stay Updated</h2>
+                <p>We are currently talking to people to find out what to focus on first.</p>
+                <form id="newsletter-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Get Updates</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container"><p>todo...</p></div>
+        </section>
+
+        <section id="team">
+            <div class="container">
+                <h2>The Team</h2>
+                 <!-- <p>We are a team of three co-founders passionate about bringing modern software and machine learning practices to the field of industrial imaging.</p> -->
+                <div class="team-members">
+                    <div class="team-member">
+                        <a href="https://janikjehkul.com" style="text-decoration: none; color: inherit;">
+                            <img src="janik.jpeg" alt="Janik Jehkul">
+                            <h3>Janik Jehkul</h3>
+                            <ul>
+                                <li>MSc Informatics @ TUM with focus on AI in medicine</li>
+                                <li>Member @ TUM.ai doing the research track</li>
+                                <li>Published paper in ML</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="team-member">
+                        <a href="https://www.linkedin.com/in/alexander-wiener-8b0601210" style="text-decoration: none; color: inherit;">
+                             <img src="alex.jpeg" alt="Alexander Wiener">
+                            <h3>Alexander Wiener</h3>
+                            <ul>
+                                <li>BSc Information Systems @ TUM with focus on Computer Science</li>
+                                <li>1 year of software engineering working student experience</li>
+                                <li>Winner of the Digital Future Challenge #4 and multiple hackathons</li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="team-member">
+                        <a href="https://nicolasstellwag.com" style="text-decoration: none; color: inherit;">
+                             <img src="nico.jpeg" alt="Nicolas Stellwag">
+                            <h3>Nicolas Stellwag</h3>
+                            <ul>
+                                <li>MSc Informatics @ TUM with focus on (3D vision) ML</li>
+                                <li>4 years of software engineering working student experience</li>
+                                <li>Bachelor's thesis about ML for CT reconstruction</li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Interested in learning more or discussing potential collaborations? Contact us using the form below.</p>
+                <form id="contact-form">
+                     <input type="text" name="contact-name" placeholder="Your Name" required>
+                     <input type="email" name="contact-email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Janik Jehkul, Alexander Wiener, Nicolas Stellwag. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Basic smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                // Special case for top logo
+                if (targetId === '#top') {
+                     window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Placeholder for form submissions
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('This does nothing yet :)'); // Replace with actual form submission logic
+            this.reset();
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('This does nothing yet :)'); // Replace with actual form submission logic
+            this.reset();
+        });
+    </script>
+</body>
+</html> 

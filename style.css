@@ -1,0 +1,424 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f8f9fa; /* Very light grey */
+    --text-color: #212529; /* Dark grey/black */
+    --border-color: #dee2e6; /* Light grey border */
+    --header-bg: #ffffff; /* White header */
+    --section-alt-bg: #e9ecef; /* Slightly darker light grey - Increased contrast */
+    --accent-color: #3675fc; /* PocketBase blue */
+    --accent-hover-color: #2d63d4;
+    --button-text-color: var(--text-color); /* Changed from #ffffff */
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --placeholder-color: #6c757d;
+    --link-color: var(--accent-color);
+    --heading-color: #343a40;
+    --footer-bg: var(--header-bg);
+    --footer-text: #6c757d;
+
+    /* Neutral Button Colors - Light Mode */
+    --button-bg: #f8f9fa; /* Same as default bg or slightly different */
+    --button-hover-bg: #e9ecef; /* Slightly darker grey */
+    --button-border: var(--text-color); /* Changed to black/dark grey */
+    --button-hover-border: var(--text-color); /* Changed to black/dark grey */
+
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-base: 1rem; /* 16px */
+    --line-height-base: 1.6;
+
+    --container-width: 90%;
+    --container-max-width: 1140px;
+
+    --border-radius: 0.25rem; /* Subtle rounding, adjust if needed for pure rectangular */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212; /* Very dark grey */
+        --text-color: #e9ecef; /* Light grey text */
+        --border-color: #495057; /* Darker grey border */
+        --header-bg: #1f1f1f; /* Dark header */
+        --section-alt-bg: #1a1a1a; /* Slightly lighter dark - Decreased contrast */
+        --accent-color: #4e8cfc; /* Slightly lighter blue for dark mode */
+        --accent-hover-color: #6b9eff;
+        --button-text-color: var(--text-color); /* Changed from #ffffff */
+        --input-bg: #2c2c2c;
+        --input-border: #495057;
+        --placeholder-color: #adb5bd;
+        --link-color: var(--accent-color);
+        --heading-color: #f8f9fa;
+        --footer-bg: var(--header-bg);
+        --footer-text: #adb5bd;
+
+        /* Neutral Button Colors - Dark Mode */
+        --button-bg: var(--bg-color); /* Dark grey - Use page background */
+        --button-hover-bg: #2c2c2c; /* Slightly lighter dark grey for hover */
+        --button-border: #ffffff; /* Changed to white */
+        --button-hover-border: #ffffff; /* Changed to white */
+    }
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: var(--container-width);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1.5em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover-color);
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    padding-left: 20px; /* Keep default list indentation */
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.5rem 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+#logo:hover {
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5rem; /* Spacing between nav items */
+    margin-bottom: 0; /* Override default li margin */
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Set scroll padding top to account for sticky header height */
+html {
+    scroll-padding-top: 65px; /* Adjusted from 80px */
+    scroll-behavior: smooth;
+}
+
+/* Main Sections */
+main section {
+    padding: 40px 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    border-bottom: none;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* About Section */
+#about ul {
+    list-style: disc;
+    margin-bottom: 1.5em;
+}
+
+#about strong {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+#about {
+    padding-bottom: 20px; /* Reduce bottom padding */
+}
+
+/* Team Section */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 2em;
+}
+
+.team-member {
+    background-color: var(--section-alt-bg); /* Use section alt bg */
+    /* Removed border */
+    border-radius: 0.75rem; /* Increased rounding */
+    padding: 1.5em;
+    text-align: center; /* Center align content */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team-member a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Make the whole area clickable */
+    height: 100%; /* Ensure link covers the card */
+}
+
+.team-member img {
+    width: 100px; /* Slightly larger */
+    height: 100px;
+    background-color: var(--border-color); /* Placeholder bg */
+    display: block;
+    margin: 0 auto 1em; /* Center horizontally, add bottom margin */
+    border-radius: 50%; /* Round image */
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75em; /* Increase margin below name */
+}
+
+.team-member ul {
+    text-align: left; /* Keep bullet points left-aligned */
+    font-size: 0.9rem;
+    opacity: 0.8;
+    padding-left: 1.5em; /* Adjust padding for left alignment within centered card */
+    margin: 0 auto; /* Center the list block itself */
+    max-width: 85%; /* Prevent list from being too wide */
+    list-style: disc;
+    margin-bottom: 0;
+}
+
+.team-member ul li {
+    margin-bottom: 0.3em;
+}
+
+#team {
+    padding-top: 20px; /* Reduce top padding */
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+/* Center forms in hero and contact */
+.hero form,
+#contact form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Add this to center the button */
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--input-border);
+    appearance: none; /* Modern browsers */
+    border-radius: var(--border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+form input[type="text"]::placeholder,
+form input[type="email"]::placeholder,
+form textarea::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    outline: 0;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-rgb, 54, 117, 252), 0.25); /* Create an RGB version if needed */
+}
+
+/* Need to define --accent-color-rgb if using the focus shadow */
+/* Example: Add this inside :root */
+/* --accent-color-rgb: 54, 117, 252; */
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Buttons */
+button[type="submit"],
+.button /* Generic button class */
+{
+    display: inline-block;
+    font-weight: 500;
+    line-height: var(--line-height-base);
+    color: var(--button-text-color); /* Use variable */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--button-bg); /* Use variable */
+    border: 2px solid var(--button-border); /* Changed from 1px to 2px */
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button[type="submit"]:hover,
+.button:hover {
+    color: var(--button-text-color); /* Use variable */
+    background-color: var(--button-hover-bg); /* Use variable */
+    border-color: var(--button-hover-border); /* Use variable */
+    border-width: 2px; /* Ensure hover state also has 2px border */
+    text-decoration: none;
+}
+
+/* Override newsletter button color if needed */
+/* #newsletter-form button[type="submit"] { background-color: #some-other-color; border-color: #some-other-color; } */
+/* #newsletter-form button[type="submit"]:hover { background-color: #darker-other-color; border-color: #darker-other-color; } */
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+footer .container {
+    padding: 10px 0;
+}
+
+/* Apply alt background specifically to about and team sections */
+#about,
+#team {
+    background-color: var(--section-alt-bg);
+}
+
+/* Add dark mode specific hover effect after the general one */
+@media (prefers-color-scheme: dark) {
+    .team-member:hover {
+        /* Make the shadow less intense */
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.06); /* Lighter shadow, reduced opacity */
+    }
+} 
