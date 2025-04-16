@@ -151,30 +151,26 @@
         <div class="container">
           <h2>Get in Touch</h2>
           <p>
-            Interested in learning more or discussing potential collaborations?
-            Contact us using the form below.
+            We're currently evaluating and shaping our idea by talking to as
+            many people as we can. So if our project sounds interesting to you,
+            we are always happy to talk! Feel free to send us an email or book a
+            call.
           </p>
-          <form id="contact-form">
-            <input
-              type="text"
-              name="contact-name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              name="contact-email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-            ></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+          <!-- Container for contact options -->
+          <div class="contact-option">
+            <div class="contact-option contact-option-email"></div>
+            <a href="mailto:team@tresorml.com" class="button">Send Email</a>
+          </div>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/tresor-ml-voxelvault/30min"
+            style="min-width: 320px; height: 700px"
+          ></div>
+          <script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          ></script>
         </div>
       </section>
     </main>
@@ -208,14 +204,6 @@
           }
         });
       });
-
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("This does nothing yet :)"); // Replace with actual form submission logic
-          this.reset();
-        });
     </script>
   </body>
 </html>

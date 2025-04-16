@@ -531,3 +531,53 @@ footer .container {
   padding-bottom: 0.4em; /* Match standard h2 padding */
   border-bottom: 1px solid var(--border-color); /* Match standard h2 border */
 }
+
+/* Contact Section Options Layout */
+
+/* Center content within the main contact container */
+#contact .container {
+  /* text-align: center; */ /* Removed */
+}
+
+/* Reduce margin below the main contact intro paragraph */
+#contact .container > p:first-of-type {
+  margin-bottom: 1.5rem; /* Adjust as needed */
+}
+
+/* Reset text-align for options container if needed (likely not) */
+/* .contact-options { text-align: left; } */
+
+.contact-option {
+  /* flex: 1; Remove flex grow */
+  /* min-width: 300px; Remove min-width */
+  text-align: center; /* Center content within each option */
+  /* Add some separation or styling if needed, e.g., */
+  /* background-color: var(--section-alt-bg); */
+  /* padding: 1.5rem; */
+  /* border-radius: var(--border-radius); */
+}
+
+.contact-option h3 {
+  margin-bottom: 0.3rem; /* Further Reduced margin */
+  font-size: 1.3rem; /* Slightly smaller heading for options */
+  border-bottom: none; /* Remove default h2 border if applied */
+  margin-top: 0; /* Reset top margin if needed */
+}
+
+.contact-option p {
+  margin-bottom: 0.5rem; /* Further Reduced margin */
+}
+
+/* Specific styling for email option alignment */
+.contact-option-email {
+  /* Center content vertically or adjust as needed */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* Consider adding padding top to align with Calendly if needed */
+  /* padding-top: 2rem; */
+}
+
+.contact-option-email .button {
+  margin-top: 0.5rem; /* Further Reduced space above the button */
+}
