@@ -24,10 +24,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install git-lfs
+        run: |
+          sudo apt-get update
+          sudo apt-get install git-lfs -y
+          git lfs install --system
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true # Ensure LFS files are checked out
       - name: Pull LFS files
         run: git lfs pull
       - name: Setup Pages
