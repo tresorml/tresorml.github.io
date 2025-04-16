@@ -37,6 +37,8 @@
   --container-max-width: 1140px;
 
   --border-radius: 0.25rem; /* Subtle rounding, adjust if needed for pure rectangular */
+  /* Add RGB version of accent color for box-shadow */
+  --accent-color-rgb: 54, 117, 252;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,6 +64,9 @@
     --button-hover-bg: #2c2c2c; /* Slightly lighter dark grey for hover */
     --button-border: #ffffff; /* Changed to white */
     --button-hover-border: #ffffff; /* Changed to white */
+
+    /* Add RGB version of accent color for box-shadow - Dark Mode */
+    --accent-color-rgb: 78, 140, 252; /* Adjusted for dark mode if needed, assuming same RGB base works */
   }
 }
 
@@ -314,7 +319,7 @@ form {
 #contact form {
   margin-left: auto;
   margin-right: auto;
-  text-align: center; /* Add this to center the button */
+  text-align: center; /* Center the button */
 }
 
 form label {
@@ -438,12 +443,16 @@ footer .container {
 }
 
 .checkbox-group input[type="checkbox"] {
-  margin-top: 0.2em; /* Align checkbox slightly better with the first line of text */
-  margin-right: 0.6em; /* Space between checkbox and label */
-  width: 1em; /* Explicit width */
-  height: 1em; /* Explicit height */
-  appearance: auto; /* Ensure browser default appearance is used */
-  cursor: pointer;
+  margin-right: 0.5em;
+  /* Ensure visibility in Safari */
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+  width: 1em; /* Explicit size */
+  height: 1em; /* Explicit size */
+  /* Optional: Customize appearance further */
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* Add custom styles if using appearance: none */
 }
 
 .checkbox-group label {
@@ -455,4 +464,24 @@ footer .container {
 
 .checkbox-group label a {
   text-decoration: underline;
+}
+
+/* Remove hover effects specifically from the link, apply to parent */
+.team-member a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Legal Notice & Privacy Policy specific section styles */
+/* Use IDs directly instead of additional classes */
+#legal-notice,
+#privacy-policy {
+  padding: 40px 0; /* Match standard section padding */
+}
+
+#legal-notice h2,
+#privacy-policy h2 {
+  margin-top: 1.5em; /* Match standard h2 top margin */
+  padding-bottom: 0.4em; /* Match standard h2 padding */
+  border-bottom: 1px solid var(--border-color); /* Match standard h2 border */
 }
