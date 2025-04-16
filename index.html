@@ -34,13 +34,37 @@
             We are currently talking to people to find out what to focus on
             first.
           </p>
-          <form id="newsletter-form">
-            <input type="text" name="name" placeholder="Your Name" required />
+          <form
+            id="newsletter-form"
+            action="https://gmail.us17.list-manage.com/subscribe/post"
+            method="POST"
+          >
+            <input type="hidden" name="u" value="041186c4fef7f992c56d5fca2" />
+            <input type="hidden" name="id" value="3d9b79c9c8" />
+            <div class="name-inputs">
+              <input
+                type="text"
+                name="MERGE1"
+                placeholder="First Name"
+                required
+                id="MERGE1"
+              />
+              <input
+                type="text"
+                name="MERGE2"
+                placeholder="Last Name"
+                required
+                id="MERGE2"
+              />
+            </div>
             <input
               type="email"
-              name="email"
+              name="MERGE0"
               placeholder="Your Email"
               required
+              id="MERGE0"
+              autocapitalize="off"
+              autocorrect="off"
             />
             <div class="checkbox-container">
               <input
@@ -184,15 +208,6 @@
           }
         });
       });
-
-      // Placeholder for form submissions
-      document
-        .getElementById("newsletter-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("This does nothing yet :)"); // Replace with actual form submission logic
-          this.reset();
-        });
 
       document
         .getElementById("contact-form")

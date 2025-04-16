@@ -229,6 +229,19 @@ main section {
   margin-bottom: 0.5em;
 }
 
+/* Styles for side-by-side name inputs */
+.name-inputs {
+  display: flex;
+  gap: 1rem; /* Adjust gap as needed */
+  margin-bottom: 1rem; /* Add space below the name inputs */
+}
+
+.name-inputs input[type="text"] {
+  flex: 1; /* Make inputs share space equally */
+  /* Remove default margin-bottom if it exists to rely on parent's gap */
+  margin-bottom: 0;
+}
+
 /* About Section */
 #about ul {
   list-style: disc;
