@@ -401,9 +401,74 @@ button[type="submit"]:hover,
   text-decoration: none;
 }
 
-/* Override newsletter button color if needed */
-/* #newsletter-form button[type="submit"] { background-color: #some-other-color; border-color: #some-other-color; } */
-/* #newsletter-form button[type="submit"]:hover { background-color: #darker-other-color; border-color: #darker-other-color; } */
+/* Styles for the newsletter checkbox and label */
+
+/* Container for checkbox and label */
+#newsletter-form .checkbox-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Keep content centered within the form area */
+  gap: 0.5em; /* Space between checkbox and label */
+  margin-bottom: 1rem; /* Space below the checkbox row */
+  text-align: left; /* Align text within the container to the left */
+}
+
+#newsletter-form .checkbox-container input[type="checkbox"] {
+  display: block; /* Let flexbox handle layout */
+  /* Make checkbox bigger and style like button */
+  appearance: none; /* Remove default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.5em; /* Increase size */
+  height: 1.5em; /* Increase size */
+  border: 2px solid var(--button-border); /* Match button border */
+  border-radius: var(--border-radius); /* Match button border-radius */
+  background-color: var(--button-bg); /* Match button background */
+  margin: 0; /* Remove default margins */
+  flex-shrink: 0; /* Prevent checkbox from shrinking */
+  cursor: pointer;
+  position: relative; /* For positioning the checkmark */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Style the checkmark for the checked state */
+#newsletter-form .checkbox-container input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  width: 0.8em;
+  height: 0.8em;
+  background-color: var(
+    --text-color
+  ); /* Checkmark color - Changed to text color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.15s ease-in-out;
+  border-radius: 0.1em; /* Slightly rounded checkmark */
+}
+
+#newsletter-form .checkbox-container input[type="checkbox"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#newsletter-form .checkbox-container input[type="checkbox"]:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+}
+
+#newsletter-form .checkbox-container input[type="checkbox"]:focus {
+  outline: none; /* Remove default outline */
+  /* Apply focus style similar to text inputs but on the custom border */
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-rgb, 54, 117, 252), 0.25);
+}
+
+#newsletter-form .checkbox-container label[for="privacy-consent-checkbox"] {
+  display: block; /* Let flexbox handle layout */
+  margin-bottom: 0; /* Remove default label margin */
+  font-weight: normal; /* Make label text normal weight */
+  vertical-align: initial; /* Reset vertical-align */
+}
 
 /* Footer */
 footer {
@@ -432,38 +497,6 @@ footer .container {
     /* Make the shadow less intense */
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.06); /* Lighter shadow, reduced opacity */
   }
-}
-
-/* Checkbox specific styles */
-.form-group.checkbox-group {
-  display: flex;
-  align-items: flex-start; /* Align items to the top */
-  margin-bottom: 1rem; /* Add some space below the checkbox group */
-  text-align: left; /* Ensure label text aligns left */
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-right: 0.5em;
-  /* Ensure visibility in Safari */
-  -webkit-appearance: checkbox;
-  appearance: checkbox;
-  width: 1em; /* Explicit size */
-  height: 1em; /* Explicit size */
-  /* Optional: Customize appearance further */
-  /* appearance: none; */
-  /* -webkit-appearance: none; */
-  /* Add custom styles if using appearance: none */
-}
-
-.checkbox-group label {
-  display: inline; /* Keep label inline */
-  margin-bottom: 0; /* Override default label margin if any */
-  line-height: 1.4; /* Adjust line height for potentially wrapping text */
-  cursor: pointer;
-}
-
-.checkbox-group label a {
-  text-decoration: underline;
 }
 
 /* Remove hover effects specifically from the link, apply to parent */
