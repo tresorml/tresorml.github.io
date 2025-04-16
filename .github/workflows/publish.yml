@@ -28,13 +28,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true # Ensure LFS files are checked out
+      - name: Pull LFS files
+        run: git lfs pull
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: "."
       # Add build steps here if needed, e.g.:
       # - name: Use Node.js
       #   uses: actions/setup-node@v4
@@ -60,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
