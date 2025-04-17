@@ -34,7 +34,7 @@
   --line-height-base: 1.6;
 
   --container-width: 90%;
-  --container-max-width: 1140px;
+  --container-max-width: 1000px;
 
   --border-radius: 0.25rem; /* Subtle rounding, adjust if needed for pure rectangular */
   /* Add RGB version of accent color for box-shadow */
@@ -198,11 +198,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Main Sections */
-main section {
-  padding: 40px 0;
-}
-
 /* Hero Section */
 .hero {
   text-align: center;
@@ -240,21 +235,6 @@ main section {
   flex: 1; /* Make inputs share space equally */
   /* Remove default margin-bottom if it exists to rely on parent's gap */
   margin-bottom: 0;
-}
-
-/* About Section */
-#about ul {
-  list-style: disc;
-  margin-bottom: 1.5em;
-}
-
-#about strong {
-  font-weight: 600;
-  color: var(--heading-color);
-}
-
-#about {
-  padding-bottom: 20px; /* Reduce bottom padding */
 }
 
 /* Team Section */
@@ -498,8 +478,8 @@ footer .container {
   padding: 10px 0;
 }
 
-/* Apply alt background specifically to about and team sections */
-#about,
+/* Apply alt background to specific sections for alternating pattern */
+#idea,
 #team {
   background-color: var(--section-alt-bg);
 }
@@ -576,8 +556,17 @@ footer .container {
   /* align-items: flex-start; */
   /* Consider adding padding top to align with Calendly if needed */
   /* padding-top: 2rem; */
+  margin-bottom: 1.5rem; /* Add space below the email button container */
 }
 
-.contact-option-email .button {
-  margin-top: 0.5rem; /* Further Reduced space above the button */
+.idea-emphasized {
+  text-align: center;
+  font-size: 1.15em; /* Slightly larger */
+  font-style: italic;
+  margin-top: 1.5em; /* Add some space above */
+  margin-bottom: 1.5em; /* Add some space below */
+}
+
+.idea-headline {
+  margin-top: 1.5em; /* Add significant space above */
 }
