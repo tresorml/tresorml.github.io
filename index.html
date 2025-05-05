@@ -252,7 +252,6 @@
             we are always happy to talk! Feel free to send us an email or book a
             call.
           </p>
-          <!-- Container for contact options -->
           <div class="contact-option">
             <div class="contact-option contact-option-email"></div>
             <a href="mailto:deepspectaiteam@gmail.com" class="button"
@@ -261,9 +260,30 @@
           </div>
           <div
             class="calendly-inline-widget"
-            data-url="https://calendly.com/tresor-ml-voxelvault/30min"
+            data-url="https://calendly.com/deepspectaiteam/30min?background_color=000000&text_color=ffffff"
             style="min-width: 320px; height: 700px"
           ></div>
+          <script>
+            const calendlyWidget = document.querySelector(
+              ".calendly-inline-widget"
+            );
+            const prefersDark =
+              window.matchMedia &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const baseUrl = "https://calendly.com/deepspectaiteam/30min";
+
+            if (prefersDark) {
+              calendlyWidget.setAttribute(
+                "data-url",
+                baseUrl + "?background_color=000000&text_color=ffffff"
+              );
+            } else {
+              calendlyWidget.setAttribute(
+                "data-url",
+                baseUrl + "?background_color=ffffff&text_color=000000"
+              );
+            }
+          </script>
           <script
             type="text/javascript"
             src="https://assets.calendly.com/assets/external/widget.js"
