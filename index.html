@@ -23,19 +23,13 @@
     <main>
       <section id="top" class="hero">
         <div class="container">
-          <h1>Bridging the Gap Between CT and ML</h1>
+          <h1>Bootstrapping ML-driven CT Analysis</h1>
           <p>
-            We're planning to build a self-hostable platform for storing,
-            normalizing, annotating, and augmenting your CT data. It will also
-            feature seamless integration with modern ML tools, allow for model
-            training via GUI for non-experts, and enable automations based on
-            incoming data and model inference results.
+            Adoption of ML-driven CT analysis in inline settings is primarily
+            hindered by a lack of quality training data.
+            We will make data acquisition and model training as fast, cheap, and easy as possible.
           </p>
           <h2>Stay Updated</h2>
-          <p>
-            We are currently talking to people to find out what to focus on
-            first.
-          </p>
           <form
             id="newsletter-form"
             action="https://gmail.us17.list-manage.com/subscribe/post"
@@ -94,102 +88,25 @@
       <section id="idea">
         <div class="container">
           <h2>The Idea</h2>
-          <h3>TL;DR</h3>
           <p>
-            Current CT software is built for human analysis first, automation
-            second. In the limit, NDT will be fully automated. We're planning to
-            build the software stack that helps you get there.
+            Analysis of CT scans will have to be fully automated in smart
+            factories. Complex analysis will involve machine learning algorithms
+            that go beyond traditional computer vision. The adoption of machine learning
+            is primarily hindered by a lack of quality data:
+            <ul>
+              <li>Manufacturers don't want to intentionally produce defect components for data collection</li>
+              <li>Scan acquisition in manual settings is time-intensive and expensive</li>
+              <li>Labeling is cumbersome and must be performed by domain experts</li>
+            </ul>
           </p>
-          <h3>Problems</h3>
-          <p class="idea-emphasized">
-            1) Working with large quantities of CT data for ML applications is a
-            time sink:
+          <p>
+            We help to bootstrap ML-driven automatic analysis by:
+            <ol>
+              <li>Training a rough prototype solely based on defect-free scans or a CAD model</li>
+              <li>Leveraging that prototype to assist in inline inspection, and making defect labeling much faster and easier</li>
+              <li>Once enough labeled defects are available, we train a reliable model that can be deployed in fully automated settings</li>
+            </ol>
           </p>
-          <ul>
-            <li>
-              <strong>Data Collection:</strong> Viewing and organizing large
-              quantities of scans is cumbersome as many existing tools focus on
-              individual scan analysis.
-            </li>
-            <li>
-              <strong>Annotation:</strong> Annotating 3D data is time consuming,
-              tools that make it easier mostly focus on medical data formats.
-            </li>
-            <li>
-              <strong>Data Formats:</strong> Inconsistent data formats across
-              different CT scanners and software systems have to be normalized.
-            </li>
-            <li>
-              <strong>Data Security:</strong> NDT data can be highly sensitive,
-              so cloud-based solutions are off the table.
-            </li>
-          </ul>
-          <p class="idea-emphasized">
-            2) The CT and ML worlds are disconnected:
-          </p>
-          <ul>
-            <li>
-              <strong>Expertise:</strong> CT specialists lack ML expertise, and
-              ML specialists lack CT expertise.
-            </li>
-            <li>
-              <strong>Tool Integration:</strong> Traditional CT software does
-              not integrate well with standard ML tooling.
-            </li>
-          </ul>
-          <h3 class="idea-headline">Our Vision</h3>
-          <p class="idea-emphasized">
-            1) A data platform to manage CT data for ML applications:
-          </p>
-          <ul>
-            <li>
-              <strong>Format Standardization:</strong> Support for all major CT
-              devices and reconstruction software, while trying to establish a
-              standard format.
-            </li>
-            <li>
-              <strong>Data Screening:</strong> Tools to view, filter, and
-              combine CT scans to datasets effectively.
-            </li>
-            <li>
-              <strong>Data Annotation:</strong> Labeling tools designed to make
-              annotating 3D CT data faster.
-            </li>
-            <li>
-              <strong>Data Augmentation:</strong> Extend datasets with augmented
-              samples using a few mouse clicks.
-            </li>
-            <li>
-              <strong>Self-Hostable:</strong> Choose between comfortable cloud
-              access or secure self-hosting for maximum data control.
-            </li>
-            <li>
-              <strong>Secure Collaboration:</strong> Features for access control
-              and managing associated legal information.
-            </li>
-          </ul>
-          <p class="idea-emphasized">
-            2) Seamless integration with ML tooling:
-          </p>
-          <ul>
-            <li>
-              <strong>Accessible Training:</strong> Train models for common
-              tasks like segmentation right from the GUI or using a high-level
-              Python SDK, without having to be a ML expert.
-            </li>
-            <li>
-              <strong>PyTorch Integration:</strong> A low-level Python SDK that
-              integrates with standard machine learning tooling like PyTorch.
-            </li>
-            <li>
-              <strong>Easy Deployment:</strong> Deploy models to the cloud or a
-              local GPU cluster.
-            </li>
-            <li>
-              <strong>Inference Automations:</strong> Automatically analyze new
-              data using trained models, and trigger workflows based on results.
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -198,26 +115,15 @@
           <h2>The Team</h2>
           <div class="team-members">
             <div class="team-member">
-              <a href="https://janikjehkul.com">
-                <img src="janik.jpeg" alt="Janik Jehkul" />
-                <h3>Janik Jehkul</h3>
-                <ul>
-                  <li>MSc Informatics @ TUM with focus on AI in medicine</li>
-                  <li>Member @ TUM.ai doing the research track</li>
-                  <li>Published paper in ML</li>
-                </ul>
-              </a>
-            </div>
-            <div class="team-member">
               <a href="https://www.linkedin.com/in/alexander-wiener-8b0601210">
                 <img src="alex.jpeg" alt="Alexander Wiener" />
                 <h3>Alexander Wiener</h3>
                 <ul>
                   <li>
-                    BSc Information Systems @ TUM with focus on Computer Science
+                    BSc Information Systems @ TUM with a focus on Computer Science
                   </li>
                   <li>
-                    1 year of software engineering working student experience
+                    1 year of software engineering experience
                   </li>
                   <li>
                     Winner of the Digital Future Challenge #4 and multiple
@@ -231,11 +137,11 @@
                 <img src="nico.jpeg" alt="Nicolas Stellwag" />
                 <h3>Nicolas Stellwag</h3>
                 <ul>
-                  <li>MSc Informatics @ TUM with focus on (3D vision) ML</li>
+                  <li>MSc Informatics @ TUM with a focus on ML for 3D data</li>
                   <li>
-                    4 years of software engineering working student experience
+                    4 years of software engineering experience
                   </li>
-                  <li>Bachelor's thesis about ML for CT reconstruction</li>
+                  <li>Bachelor's thesis on ML for CT reconstruction</li>
                 </ul>
               </a>
             </div>
@@ -247,9 +153,7 @@
         <div class="container">
           <h2>Get in Touch</h2>
           <p>
-            We're currently evaluating and shaping our idea by talking to as
-            many people as we can. So if our project sounds interesting to you,
-            we are always happy to talk! Feel free to send us an email or book a
+            We're currently looking for partners to evaluate feasibility. If our project sounds interesting to you, we are always happy to talk! Feel free to send us an email or book a
             call.
           </p>
           <div class="contact-option">
